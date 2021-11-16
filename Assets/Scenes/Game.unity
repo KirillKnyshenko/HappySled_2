@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.4, g: 1, b: 1, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.08
-  m_LinearFogStart: 7
-  m_LinearFogEnd: 30
+  m_LinearFogStart: 30
+  m_LinearFogEnd: 200
   m_AmbientSkyColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -286,10 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offcetPostion: {x: 0, y: 8, z: -10}
-  offcetRotation: {x: 0, y: 5, z: 0}
   target: {fileID: 0}
   translateSpeed: 4
-  rotationSpeed: 4
 --- !u!1 &1241118939
 GameObject:
   m_ObjectHideFlags: 0

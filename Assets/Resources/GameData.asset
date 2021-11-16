@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   main:
-    playerPrefab: {fileID: 717967175120763608, guid: 4992fe2dda827c249a63336689a0b1c4,
+    playerPrefab: {fileID: 6433525072537600903, guid: 08a907f5e39505d4791fd13a54b94988,
       type: 3}
     canvas: {fileID: 6140330116539025362, guid: 93c1f840ab8d52144a21145685ef2058,
       type: 3}
