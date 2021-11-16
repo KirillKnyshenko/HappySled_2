@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offcetPostion: {x: 0, y: 8, z: -10}
   target: {fileID: 0}
-  translateSpeed: 4
+  translateSpeed: 6
 --- !u!1 &1241118939
 GameObject:
   m_ObjectHideFlags: 0

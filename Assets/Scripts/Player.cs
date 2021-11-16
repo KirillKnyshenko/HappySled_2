@@ -8,22 +8,21 @@ public class Player : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float speedLR, speedForward, posX, rotationY;
-    [SerializeField] Quaternion rotateLR, oldRotate;
+
+    public const float lrRange = 5.5f;
+    public const float rotAngle = 45;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    public const float lrRange = 5.5f;
-    public const float rotAngle = 45;
     void Update()
     {
         rb.isKinematic = !(GameManager.gameStage == GameStage.Game);
 
         if (GameManager.gameStage == GameStage.Game)
         {
-            oldRotate = transform.rotation;
             rotationY = Mathf.Lerp(rotationY, 0, Time.deltaTime * 10);
 
             // Move forward
@@ -39,9 +38,8 @@ public class Player : MonoBehaviour
                     rotationY = 0;
                 }
                 else
-                    rotationY += Input.GetAxis("Mouse X");
+                    rotationY += Input.GetAxis("Mouse X") * 2;
             }
-
 
             rotationY = Mathf.Clamp(rotationY, -rotAngle, rotAngle);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, rotationY, 0)), Time.deltaTime * 10);
