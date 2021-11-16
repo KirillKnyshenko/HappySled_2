@@ -12,8 +12,9 @@ public class TrupleInfo : MonoBehaviour
 {
     public List<Dog> truplesDog;
 
-    void Start()
+    void Update()
     {
+        transform.eulerAngles = new Vector3();
         // Work woth LineRendere
         for (int i = 0; i < truplesDog.Count; i++)
         {

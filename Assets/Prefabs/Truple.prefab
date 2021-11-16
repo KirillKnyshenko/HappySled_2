@@ -48,8 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   truplesDog:
   - dog: {fileID: 3234144235732152416}
+    backPoint: {fileID: 0}
     dogLine: {fileID: 7138103812627560882}
   - dog: {fileID: 3234144235732152416}
+    backPoint: {fileID: 0}
     dogLine: {fileID: 7138103812627560882}
 --- !u!1 &614608158150106180
 GameObject:
@@ -179,7 +181,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!114 &3691849774414502692
 MonoBehaviour:
@@ -323,7 +325,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!114 &8030509891119640501
 MonoBehaviour:
