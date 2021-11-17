@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3089592415200696117}
   - component: {fileID: 4036044771172269743}
+  - component: {fileID: 2207784617655439772}
   m_Layer: 0
   m_Name: Truple
-  m_TagString: Untagged
+  m_TagString: Truple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,9 +51,24 @@ MonoBehaviour:
   - dog: {fileID: 3234144235732152416}
     backPoint: {fileID: 0}
     dogLine: {fileID: 7138103812627560882}
-  - dog: {fileID: 3234144235732152416}
+    dogAnimator: {fileID: 5824206890089343929}
+  - dog: {fileID: 7939584833902476526}
     backPoint: {fileID: 0}
-    dogLine: {fileID: 7138103812627560882}
+    dogLine: {fileID: 391603923689868206}
+    dogAnimator: {fileID: 1305289720742061879}
+--- !u!65 &2207784617655439772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12154714976572795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5150084, y: 1.5706851, z: 1.668119}
+  m_Center: {x: 0.020878673, y: 0.74467456, z: 0.19486833}
 --- !u!1 &614608158150106180
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +79,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4637875735032762281}
   - component: {fileID: 7138103812627560882}
-  - component: {fileID: 3691849774414502692}
   m_Layer: 0
   m_Name: LineR
   m_TagString: Untagged
@@ -183,20 +198,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &3691849774414502692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614608158150106180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d97fd20763288c40a3078c438ca1a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  back: {fileID: 0}
-  front: {fileID: 3456108769330448649}
 --- !u!1 &5020053721144490538
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +208,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5205846145507973778}
   - component: {fileID: 391603923689868206}
-  - component: {fileID: 8030509891119640501}
   m_Layer: 0
   m_Name: LineL
   m_TagString: Untagged
@@ -327,20 +327,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &8030509891119640501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5020053721144490538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d97fd20763288c40a3078c438ca1a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  back: {fileID: 0}
-  front: {fileID: 7870180838936741255}
 --- !u!1 &6750120890949221120
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,9 +434,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2949270559499017482}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3456108769330448649 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 512136504051045379, guid: 6563b2e6330f1f742bf618129966df50,
+--- !u!95 &5824206890089343929 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8664455900936582835, guid: 6563b2e6330f1f742bf618129966df50,
     type: 3}
   m_PrefabInstance: {fileID: 2949270559499017482}
   m_PrefabAsset: {fileID: 0}
@@ -529,9 +515,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7647963917382062468}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7870180838936741255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 512136504051045379, guid: 6563b2e6330f1f742bf618129966df50,
+--- !u!95 &1305289720742061879 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8664455900936582835, guid: 6563b2e6330f1f742bf618129966df50,
     type: 3}
   m_PrefabInstance: {fileID: 7647963917382062468}
   m_PrefabAsset: {fileID: 0}

@@ -105,8 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 197432684921151586}
   - component: {fileID: 6444446292661700313}
-  - component: {fileID: -7782778464927889390}
   - component: {fileID: 1725687422767948059}
+  - component: {fileID: -7782778464927889390}
   m_Layer: 0
   m_Name: Stikcman
   m_TagString: Untagged
@@ -146,6 +146,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &1725687422767948059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717967175120763608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0015886, z: 1}
+  m_Center: {x: 0, y: 0.98913085, z: 0}
 --- !u!114 &-7782778464927889390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,21 +174,7 @@ MonoBehaviour:
   speedLR: 10
   speedForward: 10
   posX: 0
-  rotateLR: {x: 0, y: 0, z: 0, w: 0}
-  oldRotate: {x: 0, y: 0, z: 0, w: 0}
---- !u!65 &1725687422767948059
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717967175120763608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.0015886, z: 1}
-  m_Center: {x: 0, y: 0.98913085, z: 0}
+  rotationY: 0
 --- !u!1 &764623357030672271
 GameObject:
   m_ObjectHideFlags: 0
