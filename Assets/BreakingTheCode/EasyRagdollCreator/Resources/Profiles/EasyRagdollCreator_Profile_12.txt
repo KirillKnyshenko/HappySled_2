@@ -1,0 +1,14 @@
+Pers2_1
+hip
+spine1
+head
+L_leg1
+L_leg2
+L_foot
+L_shoulder
+L_forearm
+R_leg1
+R_leg2
+R_foot
+R_shoulder
+R_forearm

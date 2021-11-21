@@ -1,0 +1,19 @@
+Audodesk Character Creator
+Hips
+Spine1
+Head
+LeftUpLeg
+LeftLeg
+LeftFoot
+LeftArm
+LeftForeArm
+RightUpLeg
+RightLeg
+RightFoot
+RightArm
+RightForeArm
+
+
+
+
+

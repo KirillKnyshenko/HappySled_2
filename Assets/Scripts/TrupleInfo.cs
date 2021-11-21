@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,16 +9,26 @@ public class Dog
     public Transform dog, backPoint;
     public LineRenderer dogLine;
     public Animator dogAnimator;
+    public List<Rigidbody> bones;
 }
 
 public class TrupleInfo : MonoBehaviour
 {
     public List<Dog> truplesDog;
+    int num;
+
+    private void Start()
+    {
+        num = GameManager.player.GetComponent<TrupleManager>().truples.FindIndex(x => x.GetInstanceID() == transform.GetInstanceID());
+
+        for (int i = 0; i < truplesDog.Count; i++)
+        {
+            truplesDog[i].bones = truplesDog[i].dog.GetComponentsInChildren<Rigidbody>().ToList();
+        }
+    }
 
     void Update()
     {
-        transform.eulerAngles = new Vector3();
-  
         for (int i = 0; i < truplesDog.Count; i++)
         {
             // Work with LineRenderer
@@ -39,7 +50,7 @@ public class TrupleInfo : MonoBehaviour
                 truplesDog[i].dogAnimator.SetLayerWeight(1, truplesDog[i].dogAnimator.GetLayerWeight(1) + Time.deltaTime);
 
                 //Moving
-                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(0, 0, 5), Time.deltaTime);
+                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(0, transform.localPosition.y, 5), Time.deltaTime);
             }
         }
     }

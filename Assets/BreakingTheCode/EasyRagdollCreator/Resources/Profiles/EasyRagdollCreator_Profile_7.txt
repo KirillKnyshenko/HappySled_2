@@ -1,0 +1,18 @@
+Mobile Character 1
+pelvis
+hip
+head
+lThigh
+lShin
+lFoot
+lShldr
+lForeArm
+rThigh
+rShin
+rFoot
+rShldr
+rForeArm
+
+
+
+

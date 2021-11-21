@@ -1,0 +1,18 @@
+Character Creator 2
+RL_G6_Pelvis
+RL_G6_Waist
+RL_G6_Head
+RL_G6_L_Thigh
+RL_G6_L_Calf
+RL_G6_L_Foot
+RL_G6_L_Upperarm
+RL_G6_L_Forearm
+RL_G6_R_Thigh
+RL_G6_R_Calf
+RL_G6_R_Foot
+RL_G6_R_Upperarm
+RL_G6_R_Forearm
+
+
+
+

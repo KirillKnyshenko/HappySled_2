@@ -1,0 +1,14 @@
+Astronaut_1
+hip
+torso
+head
+left upper leg
+left under leg
+foot
+left upper arm
+left under arm
+right upper leg
+right under leg
+right foot
+right upper arm
+right under arm

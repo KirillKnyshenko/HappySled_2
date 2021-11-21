@@ -1,0 +1,7 @@
+. To show the tool go to "Window -> Breaking The Code -> Easy Ragdoll Creator"
+
+. Inside the tool there is tab called help explaining everything (or almost everything)
+
+. There is an example scene inside "\Assets\BreakingTheCode\EasyRagdollCreator\Scenes"
+
+. contact: breaking_the_code@hotmail.com

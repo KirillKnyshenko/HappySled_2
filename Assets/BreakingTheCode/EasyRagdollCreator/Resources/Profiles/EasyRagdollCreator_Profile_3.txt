@@ -1,0 +1,19 @@
+3D studio Max Biped
+Bip002 Pelvis
+Bip002 Spine
+Bip002 Head
+Bip002 L Thigh
+Bip002 L Calf
+Bip002 L Foot
+Bip002 L UpperArm
+Bip002 L Forearm
+Bip002 R Thigh
+Bip002 R Calf
+Bip002 R Foot
+Bip002 R UpperArm
+Bip002 R Forearm
+
+
+
+
+
