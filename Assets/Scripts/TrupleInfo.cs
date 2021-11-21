@@ -50,7 +50,7 @@ public class TrupleInfo : MonoBehaviour
                 truplesDog[i].dogAnimator.SetLayerWeight(1, truplesDog[i].dogAnimator.GetLayerWeight(1) + Time.deltaTime);
 
                 //Moving
-                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(0, transform.localPosition.y, 5), Time.deltaTime);
+                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(0, transform.localPosition.y, 5), 10 * Time.deltaTime);
             }
         }
     }

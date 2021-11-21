@@ -53,60 +53,37 @@ public class TrupleManager : MonoBehaviour
         truples.Add(newTruple.transform);
     }
 
-    public void DeleteTruple(Transform deleted)
+    public void DeleteTruple(Transform trupleDel)
     {
-        var truples = GameManager.player.GetComponent<TrupleManager>().truples;
-        var id = truples.FindIndex(x => x.GetInstanceID() == deleted.transform.GetInstanceID());
-        if (id == 0)
+        var allTruples = trupleDel.GetComponentsInChildren<TrupleInfo>();
+        foreach (var item in allTruples)
+        {
+            truples.Remove(item.transform);
+            item.transform.parent = null;
+
+            item.enabled = false;
+            StartCoroutine(disableDogs(10, item.gameObject));
+
+            for (int i = 0; i < item.truplesDog.Count; i++)
+            {
+                item.truplesDog[i].dogLine.transform.parent.gameObject.SetActive(false);
+                item.truplesDog[i].dogAnimator.enabled = false;
+                foreach (var rb in item.truplesDog[i].bones)
+                {
+                    rb.isKinematic = false;
+                    rb.AddExplosionForce(200, item.transform.position, 20);
+                }
+            }
+        }
+        if (truples.Count == 0)
         {
             UIManager.instance.Loose();
         }
+    }
 
-        List<Transform> childs = deleted.transform.
-        foreach (Transform child in deleted.transform)
-        {
-            var trupleInfo = child.GetComponent<TrupleInfo>();
-
-            if (trupleInfo != null)
-            {
-                var truplesDog = trupleInfo.truplesDog;
-
-                for (int i = 0; i < truplesDog.Count; i++)
-                {
-                    var bones = truplesDog[i].bones;
-
-                    for (int j = 0; j < bones.Count; j++)
-                    {
-                        bones[j].isKinematic = false;
-                    }
-                }
-
-                child.parent = null;
-                child.GetChild(2).gameObject.SetActive(false);
-                Destroy(child.GetComponent<TrupleInfo>());
-                Destroy(child.gameObject, 10);
-            }
-        }
-
-        var deletedInfo = deleted.GetComponent<TrupleInfo>();
-        if (deletedInfo != null)
-        {
-            var deletedDog = deletedInfo.truplesDog;
-            for (int i = 0; i < deletedDog.Count; i++)
-            {
-                var bones = deletedDog[i].bones;
-
-                for (int j = 0; j < bones.Count; j++)
-                {
-                    bones[j].isKinematic = false;
-                }
-            }
-        }
-
-        truples.RemoveRange(id, truples.Count - id);
-        deleted.parent = null;
-        deleted.GetChild(2).gameObject.SetActive(false);
-        Destroy(deleted.GetComponent<TrupleInfo>());
-        Destroy(deleted.gameObject, 10);
+    IEnumerator disableDogs(float seconds, GameObject truple)
+    {
+        yield return new WaitForSeconds(seconds);
+        truple.SetActive(false);
     }
 }
