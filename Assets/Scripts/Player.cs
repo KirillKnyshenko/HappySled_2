@@ -24,22 +24,26 @@ public class Player : MonoBehaviour
         if (GameManager.gameStage == GameStage.Game)
         {
             rotationY = Mathf.Lerp(rotationY, 0, Time.deltaTime * 10);
-
-            // Move forward
-            transform.Translate(Vector3.forward * speedForward * Time.deltaTime);
+            float speed = speedForward;
 
             // Left Right rotate
             if (Input.GetKey(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse0))
             {
                 posX += Input.GetAxis("Mouse X") * speedLR * Time.deltaTime;
+                speed *= (1 - Mathf.Abs(Mathf.Clamp(Input.GetAxis("Mouse X"), -0.5f, 0.5f)));
 
                 if (posX < -lrRange || posX > lrRange)
                 {
                     rotationY = 0;
                 }
                 else
+                {
                     rotationY += Input.GetAxis("Mouse X") * 2;
+                }    
             }
+            // Move forward
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            print(speed);
 
             rotationY = Mathf.Clamp(rotationY, -rotAngle, rotAngle);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, rotationY, 0)), Time.deltaTime * 10);
