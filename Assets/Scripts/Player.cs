@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody rb;
+    TrupleManager tm;
     [SerializeField] float speedLR, speedForward, posX, rotationY;
 
     public const float lrRange = 5.5f;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        tm = GetComponent<TrupleManager>();
     }
 
     void Update()
@@ -41,9 +43,9 @@ public class Player : MonoBehaviour
                     rotationY += Input.GetAxis("Mouse X") * 2;
                 }    
             }
+
             // Move forward
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            print(speed);
+            transform.Translate(Vector3.forward * speed * ((tm.truples.Count + 1) * 0.3f) * Time.deltaTime);
 
             rotationY = Mathf.Clamp(rotationY, -rotAngle, rotAngle);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, rotationY, 0)), Time.deltaTime * 10);
