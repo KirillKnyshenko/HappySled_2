@@ -9,12 +9,7 @@ public class TrupleManager : MonoBehaviour
     [SerializeField] GameObject truple;
     public AnimationCurve trupleCurve;
     public float maxRotate, trupleAngle;
-
-    void Start()
-    {
-        
-    }
-
+    
     void Update()
     {
         if (GameManager.gameStage == GameStage.Game)
@@ -22,17 +17,16 @@ public class TrupleManager : MonoBehaviour
             if (Input.GetKey(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse0))
             {
                 trupleAngle = (Input.GetAxis("Mouse X") * maxRotate) / truples.Count;
-
                 for (int i = truples.Count - 1; i >= 0; i--)
                 {
 
                     if (!(truples[i].transform.position.x >= 5.2f || truples[i].transform.position.x <= -5.2f))
                     {
-                        truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(new Vector3(0, trupleAngle, 0)), Time.deltaTime);
+                        truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(new Vector3(0, trupleAngle, 0)),  5 * Time.deltaTime);
                     }
                     else
                     {
-                        truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(Vector3.zero), Time.deltaTime);
+                        truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(Vector3.zero), 15 * Time.deltaTime);
                     }
                 }
             }
@@ -40,7 +34,7 @@ public class TrupleManager : MonoBehaviour
             {
                 for (int i = 0; i < truples.Count; i++)
                 {
-                    truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(Vector3.zero), Time.deltaTime);
+                    truples[i].rotation = Quaternion.Lerp(truples[i].transform.rotation, Quaternion.Euler(Vector3.zero), 5 * Time.deltaTime);
                 }
             }
         }
